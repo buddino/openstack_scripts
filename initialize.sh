@@ -41,3 +41,6 @@ echo "Downloading image Ubuntu 16.04"
 wget -P /tmp "http://192.168.9.130/cloud_images/ubuntu-16.04-server-cloudimg-amd64-disk1.img"
 openstack image create --disk-format qcow2 --file /tmp/ubuntu-16.04-server-cloudimg-amd64-disk1.img "Ubuntu16.04"
 rm /tmp/ubuntu-16.04-server-cloudimg-amd64-disk1.img
+
+echo "Creating archive policy for metric: processing_time"
+gnocchi archive-policy-rule create -a medium -m processing_time PROCESSING_TIME
