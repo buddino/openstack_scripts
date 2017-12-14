@@ -19,6 +19,7 @@ openstack security group rule create --ingress --protocol udp --dst-port 1:65535
 openstack security group rule create --ingress --protocol icmp OPEN
 
 echo "Creating flavour(s)"
+openstack flavor create --id u1 --ram 512 --disk 5 ubuntuX0_5
 openstack flavor create --id u1 --ram 1024 --disk 5 ubuntuX1
 openstack flavor create --id u2 --vcpu 2 --ram 1024 --disk 5 ubuntuX2
 openstack flavor create --id u4 --vcpu 4 --ram 1024 --disk 5 ubuntuX4
