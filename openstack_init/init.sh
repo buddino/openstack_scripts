@@ -35,14 +35,12 @@ openstack flavor delete 2
 openstack flavor delete 1
 openstack flavor delete 5
 
-echo "Creating keypair KP"
-openstack keypair create KP
-
 echo "Downloading image Ubuntu 16.04"
 wget -P /tmp "http://192.168.9.130/cloud_images/ubuntu-16.04-server-cloudimg-amd64-disk1.img"
 openstack image create --disk-format qcow2 --file /tmp/ubuntu-16.04-server-cloudimg-amd64-disk1.img "Ubuntu16.04"
 rm /tmp/ubuntu-16.04-server-cloudimg-amd64-disk1.img
 
+echo "Creating keypair based on existing public key"
 openstack keypair create --public-key public_key robexp
 
 echo "Creating archive policy for metric: processing_time"
