@@ -1,5 +1,5 @@
 #!/bin/bash
-export HOST_IP=192.168.9.131
+export HOST_IP=localhost
 export OS_PROJECT_DOMAIN_ID=default
 export OS_REGION_NAME=RegionOne
 export OS_USER_DOMAIN_ID=default
