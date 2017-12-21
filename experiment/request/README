@@ -1,0 +1,27 @@
+Send the chain request to the chain optimizer server and save the
+response into a file located into the Results folder.
+The name of the file is the same as the request file given as input.
+
+
+Usage: request.sh request_file sleep_time
+
+e.g. request.sh sample_request 5
+Execute the chain requests found into sample_request file waiting 5 seconds between them
+
+The form of the request file is:
+SRC1;DST1;CHAIN1
+SRC2;DST2;CHAIN2
+...
+SRCn;DSTn;CHAINn
+
+e.g.
+
+VF-1;VF-2;VF-3,VF-4
+VF-3;VF-6;VF-4,VF-1,VF-3
+...
+...
+VF-1;VF-3;VF-5,VF-7
+
+Semicolon as separator, commas for the chain
+
+
