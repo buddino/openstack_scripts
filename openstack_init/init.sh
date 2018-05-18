@@ -1,16 +1,4 @@
 #!/bin/bash
-export HOST_IP=localhost
-export OS_PROJECT_DOMAIN_ID=default
-export OS_REGION_NAME=RegionOne
-export OS_USER_DOMAIN_ID=default
-export OS_PROJECT_NAME=admin
-export OS_IDENTITY_API_VERSION=3
-export OS_PASSWORD=password
-export OS_AUTH_TYPE=password
-export OS_AUTH_URL=http://$HOST_IP/identity
-export OS_USERNAME=admin
-export OS_TENANT_NAME=admin
-export OS_VOLUME_API_VERSION=2
 
 echo "Creating security group OPEN"
 openstack security group create --project demo OPEN  > /dev/null
@@ -43,8 +31,3 @@ rm /tmp/ubuntu-16.04-server-cloudimg-amd64-disk1.img
 
 echo "Creating keypair based on existing public key"
 openstack keypair create --public-key public_key robexp > /dev/null
-
-echo "Creating archive policy for metric: processing_time"
-gnocchi archive-policy-rule create -a medium -m processing_time PROCESSING_TIME  > /dev/null
-ceilometer-upgrade  > /dev/null
-gnocchi-upgrade  > /dev/null
